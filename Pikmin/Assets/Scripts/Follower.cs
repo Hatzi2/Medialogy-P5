@@ -27,8 +27,6 @@ public class Follower : MonoBehaviour
         
         float distance = Vector3.Distance(playerPosition, transform.position);
         
-        //Debug.Log(distance);
-        
         if(distance < 10)
         {
             follow = true;
@@ -38,7 +36,6 @@ public class Follower : MonoBehaviour
         {
             transform.position = Vector3.MoveTowards(transform.position, playerPosition, speed * Time.deltaTime);
         }
-        
     }
 
 }

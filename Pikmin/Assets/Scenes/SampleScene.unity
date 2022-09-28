@@ -348,7 +348,7 @@ MonoBehaviour:
   pikminG: {fileID: 4407083420083614301, guid: d0324857d0b82a04eae0e00c454eb39b, type: 3}
   pikminB: {fileID: 1740743406795471714, guid: ef9179ca96cdae140b457f172dcc3bab, type: 3}
   pikminY: {fileID: 7131683743699740592, guid: 7fb5f63ceea78414fa0babfb38b375f6, type: 3}
-  pikminCount: 100
+  pikminCount: 1000
 --- !u!4 &1106132493
 Transform:
   m_ObjectHideFlags: 0
@@ -371,6 +371,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8284732756325751778, guid: 082a0992a029abe48b317ce387c901c9, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 145294957acca7b4f882da130a290971, type: 2}
     - target: {fileID: 8284732756325751783, guid: 082a0992a029abe48b317ce387c901c9, type: 3}
       propertyPath: m_Name
       value: Olimar
