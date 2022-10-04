@@ -4,24 +4,20 @@ using UnityEngine;
 
 public class Screw : MonoBehaviour
 {
-    public float speed = 0.1f;
-    public float duration;
-    //public Vector3 target = new Vector3(0,0,2);
-    //public float xAngle, yAngle, zAngle;
-    //[SerializeField] private Vector3 rotation;
-    //[SerializeField] private float speed;
-    //[SerializeField] private float movementspeed;
-    //public float degreesPerSecond = 2.0f;
+    public float unscrewLength = 0.01f;
+    public GameObject currentScrew;
+
+    private float unscrewTime = 0.2f;
+    private float duration;
+
     void Update()
     {
-        //transform.position = Vector3.MoveTowards(transform.position, target, speed * Time.deltaTime);
-        //Debug.Log(duration);
-        //duration = Time.time;
-        while(duration < 0.2f){
+        while(duration < unscrewTime){
             duration += Time.deltaTime;
-            Debug.Log(duration);
-            transform.position = transform.position + new Vector3(-1 * speed * Time.deltaTime, 0, 0);
+            transform.position = transform.position + new Vector3(-1 * unscrewLength * Time.deltaTime, 0, 0);
             transform.Rotate(Vector3.right, 25.0f * Time.deltaTime, Space.World);
+            Rigidbody gameObjectsRigidBody = currentScrew.AddComponent<Rigidbody>();
+            currentScrew.GetComponent<Rigidbody>().useGravity = true;
         }
     }
 }
