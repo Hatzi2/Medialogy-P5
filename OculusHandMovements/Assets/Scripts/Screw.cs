@@ -16,8 +16,8 @@ public class Screw : MonoBehaviour
             duration += Time.deltaTime;
             transform.position = transform.position + new Vector3(-1 * unscrewLength * Time.deltaTime, 0, 0);
             transform.Rotate(Vector3.right, 25.0f * Time.deltaTime, Space.World);
-            Rigidbody gameObjectsRigidBody = currentScrew.AddComponent<Rigidbody>();
             currentScrew.GetComponent<Rigidbody>().useGravity = true;
+            Destroy(currentScrew, 1);
         }
     }
 }
