@@ -3883,6 +3883,7 @@ GameObject:
   - component: {fileID: 4170642818487936720}
   - component: {fileID: 6004332505687984783}
   - component: {fileID: 3035271400634642567}
+  - component: {fileID: 7050984688377361106}
   m_Layer: 0
   m_Name: Window
   m_TagString: Untagged
@@ -3890,6 +3891,20 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!64 &7050984688377361106
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7050984688377361105}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 1049928748687988745, guid: 42d1ccdd226c6924695a9023a2ae5c25, type: 3}
 --- !u!1 &7117955265929404007
 GameObject:
   m_ObjectHideFlags: 0
