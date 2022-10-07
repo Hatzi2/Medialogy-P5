@@ -13,6 +13,6 @@ public class ForcefieldPulsing : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        this.GetComponent<MeshRenderer>().material.color=new Color(1.0f, 0f, 0f, 0.5f);
+        this.GetComponent<MeshRenderer>().material.color=new Color(1.0f, 0f, 0f, 0.0f);
     }
 }
