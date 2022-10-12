@@ -7,7 +7,8 @@ public class ForcefieldPulsing : MonoBehaviour
     // Start is called before the first frame update
     public float transparency;
     public float changeSpeed;
-    public AudioSource ForceFieldPulseSound;
+
+    public AudioSource ForceFieldSound;
     void Start()
     {
 
@@ -18,6 +19,6 @@ public class ForcefieldPulsing : MonoBehaviour
     {
         this.GetComponent<MeshRenderer>().material.color = new Color(1.0f, 0f, 0f, transparency);
         transparency = Mathf.PingPong((Time.time) * changeSpeed, 1) + .3f;
-        ForceFieldPulseSound.play();
+        ForceFieldSound.Play();
     }
 }

@@ -9,6 +9,8 @@ public class Forcefield : MonoBehaviour
     public GameObject Wire2;
 
     public AudioSource ForceFieldTerminateSound;
+
+    
     void Start()
     {
         
@@ -18,7 +20,7 @@ public class Forcefield : MonoBehaviour
     void Update()
     {
         if(!Wire1.activeSelf && !Wire2.activeSelf){
-            ForceFieldTerminateSound.play();
+            ForceFieldTerminateSound.Play();
             Destroy(gameObject);
             
         }
