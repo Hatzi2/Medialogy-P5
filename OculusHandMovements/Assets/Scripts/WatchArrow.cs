@@ -6,7 +6,9 @@ public class WatchArrow : MonoBehaviour
 {
     public GameObject targetObject;
     public float speed;
+
     private Vector3 GameObjectPosition;
+
     // Start is called before the first frame update
     void Start()
     {
