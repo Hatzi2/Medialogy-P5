@@ -4,23 +4,23 @@ using UnityEngine;
 
 public class Lever : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public Light roomLight;
     void Start()
     {
         
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if (transform.eulerAngles.x == -45f)
+        if (transform.localEulerAngles.x == 45)
         {
+            roomLight.enabled = true;
             Debug.Log("Lever Down");
         }
-        if (transform.eulerAngles.x == 45f)
+        if (transform.localEulerAngles.x == 315)
         {
+            roomLight.enabled = false;
             Debug.Log("Lever Up");
         }
-
     }
 }
