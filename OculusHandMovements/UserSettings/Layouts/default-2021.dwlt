@@ -74,7 +74,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 111
+  controlID: 20
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -99,7 +99,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 17
+  controlID: 29
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -249,7 +249,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 110
+  controlID: 19
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -375,22 +375,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Material/Hallways
+    - Assets/Material/Canteen/Walls and floor
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Material/Hallways
+  - Assets/Material/Canteen/Walls and floor
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\lindo\Documents\GitHub\Medialogy-P5\OculusHandMovements
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 3e630000
-    m_LastClickedID: 25406
-    m_ExpandedIDs: 000000000e6200003062000000ca9a3b
+    scrollPos: {x: 0, y: 79}
+    m_SelectedIDs: b4600000
+    m_LastClickedID: 24756
+    m_ExpandedIDs: 00000000425f0000a25f0000aa60000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -418,7 +418,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000000e620000
+    m_ExpandedIDs: 00000000425f0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -546,9 +546,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: a8e8ffff
+      m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 18f7ffff165b0000
+      m_ExpandedIDs: 6ae0ffff2efbffffb056000094590000f0590000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -797,9 +797,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 6.8089447, y: 2.9876175, z: 1.8908126}
+    m_Target: {x: 0.7847074, y: 2.5162108, z: 5.7927237}
     speed: 2
-    m_Value: {x: 6.8089447, y: 2.9876175, z: 1.8908126}
+    m_Value: {x: 0.7847074, y: 2.5162108, z: 5.7927237}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -846,13 +846,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.096187264, y: 0.7922089, z: -0.12921543, w: 0.5884193}
+    m_Target: {x: -0.14423116, y: -0.08935456, z: 0.012663684, w: -0.98531693}
     speed: 2
-    m_Value: {x: 0.09727619, y: 0.7912176, z: -0.13027194, w: 0.58952636}
+    m_Value: {x: -0.14276753, y: -0.08938254, z: 0.012530966, w: -0.98563236}
   m_Size:
-    m_Target: 3.688787
+    m_Target: 4.285793
     speed: 2
-    m_Value: 3.688787
+    m_Value: 4.285793
   m_Ortho:
     m_Target: 0
     speed: 2
