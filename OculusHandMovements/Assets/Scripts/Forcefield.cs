@@ -7,7 +7,6 @@ public class Forcefield : MonoBehaviour
     // Start is called before the first frame update
     public GameObject Wire1;
     public GameObject Wire2;
-    public Light[] lights;
     public float transparency;
     public float changeSpeed;
 
@@ -31,10 +30,6 @@ public class Forcefield : MonoBehaviour
             ForceFieldSound.Stop();
             ForceFieldTerminateSound.Play();
             Destroy(gameObject);
-            for (int i = 0; i < lights.Length; i++)
-            {
-                lights[i].enabled = false;
-            }
         }
     }
 }
