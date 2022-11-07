@@ -7,6 +7,7 @@ public class Forcefield : MonoBehaviour
     // Start is called before the first frame update
     public GameObject Wire1;
     public GameObject Wire2;
+    public LightController lightController;
     public float transparency;
     public float changeSpeed;
 
@@ -27,6 +28,7 @@ public class Forcefield : MonoBehaviour
         transparency = Mathf.PingPong((Time.time) * changeSpeed, 1) + .3f;
 
         if(!Wire1.activeSelf && !Wire2.activeSelf){
+            lightController.turnOn(false);
             ForceFieldSound.Stop();
             ForceFieldTerminateSound.Play();
             Destroy(gameObject);

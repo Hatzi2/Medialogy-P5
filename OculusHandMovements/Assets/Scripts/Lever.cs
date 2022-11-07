@@ -1,26 +1,62 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Lever : MonoBehaviour
 {
-    public Light roomLight;
+    public bool isMax = false;
+  //angle threshold to trigger if we reached limit
+    public float angleBetweenThreshold = 1f;
+    //State of the hinge joint : either reached min or max or none if in between
+    public HingeJointState hingeJointState = HingeJointState.None;
+
+    //Event called on min reached
+    public UnityEvent OnMinLimitReached;
+    //Event called on max reached
+    public UnityEvent OnMaxLimitReached;
+
+    public enum HingeJointState { Min,Max,None}
+    private HingeJoint hinge;
+
+    // Start is called before the first frame update
     void Start()
     {
-        
+        hinge = GetComponent<HingeJoint>();
     }
 
-    void Update()
+    private void FixedUpdate()
     {
-        if (transform.localEulerAngles.x == 45)
+        float angleWithMinLimit = Mathf.Abs(hinge.angle - hinge.limits.min);
+        float angleWithMaxLimit = Mathf.Abs(hinge.angle - hinge.limits.max);
+
+        //Reached Min
+        if(angleWithMinLimit < angleBetweenThreshold)
         {
-            roomLight.enabled = true;
-            Debug.Log("Lever Down");
+            if (hingeJointState != HingeJointState.Min)
+            {
+                OnMinLimitReached.Invoke();
+                isMax = false;
+            }
+
+            hingeJointState = HingeJointState.Min;
         }
-        if (transform.localEulerAngles.x == 315)
+        //Reached Max
+        else if (angleWithMaxLimit < angleBetweenThreshold)
         {
-            roomLight.enabled = false;
-            Debug.Log("Lever Up");
+            if (hingeJointState != HingeJointState.Max)
+            {
+                OnMaxLimitReached.Invoke();
+                isMax = true;
+            }
+
+            hingeJointState = HingeJointState.Max;
+        }
+        //No Limit reached
+        else
+        {
+            hingeJointState = HingeJointState.None;
         }
     }
 }
+

@@ -4,24 +4,18 @@ using UnityEngine;
 
 public class LightController : MonoBehaviour
 {
-    // Start is called before the first frame update
     public Light[] lights;
+    public Light blacklight;
     public GameObject Wire1;
     public GameObject Wire2;
-    void Start()
+
+    public void turnOn(bool on)
     {
-        
+       for (int i = 0; i < lights.Length; i++)
+            {
+                lights[i].enabled = on;
+            } 
+        blacklight.enabled = !on;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (!Wire1.activeSelf && !Wire2.activeSelf)
-        {
-            for (int i = 0; i < lights.Length; i++)
-            {
-                lights[i].enabled = false;
-            }
-        }
-    }
 }
