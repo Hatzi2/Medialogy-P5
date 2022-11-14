@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class KeypadSoundScript : MonoBehaviour
 {
-    public AudioSource audio;
+    public AudioSource keyaudio;
 
     public void playButton()
     {
-        audio.Play();
+        GetComponent<AudioSource>().Play();
     }
         
     }
