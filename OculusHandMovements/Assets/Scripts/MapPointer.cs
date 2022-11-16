@@ -31,7 +31,7 @@ public class MapPointer : MonoBehaviour
     headState.TryGetPosition(out headPosition);
     headState.TryGetRotation(out headRotation);
     
-    Debug.Log(headRotation[0]);
+
     //UnityEngine.XR.InputDevices.GetDevicesAtXRNode(UnityEngine.XR.XRNode.Head, HeadOrientation);
     wayPointPos = new Vector3(wayPoint.transform.position.x, transform.position.y, wayPoint.transform.position.z);
     transform.position = Vector3.MoveTowards(transform.position, wayPointPos, speed * Time.deltaTime);
