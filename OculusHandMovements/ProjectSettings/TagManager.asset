@@ -8,15 +8,11 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Tool
+  - 
   - Water
   - UI
-  - Levers
-<<<<<<< HEAD
   - 
-=======
-  - walls
->>>>>>> parent of 8b31e65 (Minimap collision detection)
+  - 
   - 
   - 
   - 

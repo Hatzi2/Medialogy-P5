@@ -7462,6 +7462,18 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 6f2567eb62a033b44b5945445ac63b23, type: 3}
   m_PrefabInstance: {fileID: 729397240}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &729397248
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 729397241}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d95437d419d14064d8c1b1cd9bfdfc14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &742168011 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5415511248055389658, guid: 521f17c3b93f6e2428b591a1d802b9e6, type: 3}
@@ -7751,6 +7763,22 @@ MonoBehaviour:
       m_SingletonActionBindings: []
       m_Flags: 0
     m_Reference: {fileID: -8198699208435500284, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+--- !u!114 &761971713
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 761971700}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22e0f76f13f0709429b1b89f9aa72051, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controller: {fileID: 1869514633}
+  vibrationLength: 0
+  vibrationStrength: 1
+  timeBetweenVibrations: 2
 --- !u!4 &779982194 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 6767a05f034c6d040a434e97d25b4d75, type: 3}
@@ -18398,6 +18426,17 @@ MonoBehaviour:
   Wire2Low: {fileID: 1761967219}
   transparencyLow: 0.1
   changeSpeedLow: 0.3
+--- !u!114 &1869514633 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1708915286625124435, guid: 3893d82a357259a4fb6a26cdfd893996, type: 3}
+  m_PrefabInstance: {fileID: 1708915286248010785}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: caff514de9b15ad48ab85dcff5508221, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1877157664
 GameObject:
   m_ObjectHideFlags: 0
@@ -22035,6 +22074,18 @@ PrefabInstance:
     - target: {fileID: 1708915286625124434, guid: 3893d82a357259a4fb6a26cdfd893996, type: 3}
       propertyPath: m_InteractionLayers.m_Bits
       value: 247
+      objectReference: {fileID: 0}
+    - target: {fileID: 1708915286625124434, guid: 3893d82a357259a4fb6a26cdfd893996, type: 3}
+      propertyPath: m_HapticSelectEnterDuration
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1708915286625124434, guid: 3893d82a357259a4fb6a26cdfd893996, type: 3}
+      propertyPath: m_HapticSelectEnterIntensity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1708915286625124434, guid: 3893d82a357259a4fb6a26cdfd893996, type: 3}
+      propertyPath: m_PlayHapticsOnSelectEntered
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1708915286625124435, guid: 3893d82a357259a4fb6a26cdfd893996, type: 3}
       propertyPath: m_PositionAction.m_Reference
