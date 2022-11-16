@@ -28,10 +28,10 @@ public class MapPointer : MonoBehaviour
     InputTracking.GetNodeStates(nodeStates);
     var headState = nodeStates.FirstOrDefault(node => node.nodeType == XRNode.Head);
     
-    headState.TryGetPosition(out headPosition);
+    //headState.TryGetPosition(out headPosition);
     headState.TryGetRotation(out headRotation);
     
-    Debug.Log(headRotation[0]);
+    //Debug.Log(headRotation[0]);
     //UnityEngine.XR.InputDevices.GetDevicesAtXRNode(UnityEngine.XR.XRNode.Head, HeadOrientation);
     wayPointPos = new Vector3(wayPoint.transform.position.x, transform.position.y, wayPoint.transform.position.z);
     transform.position = Vector3.MoveTowards(transform.position, wayPointPos, speed * Time.deltaTime);
