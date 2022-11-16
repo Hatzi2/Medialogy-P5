@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Light : MonoBehaviour
+public class Lighter : MonoBehaviour
 {
     public GameObject PLight;
     void Start()

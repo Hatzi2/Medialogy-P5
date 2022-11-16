@@ -6,25 +6,29 @@ using UnityEngine.InputSystem.Controls;
 using UnityEngine.XR.Interaction.Toolkit.Inputs;
 using UnityEngine.Events;
 using UnityEngine.XR;
+//using UnityEngine.XR.CommonUsages;
+using UnityEngine.XR.Interaction.Toolkit;
+using UnityEngine.InputSystem.XR;
+
 
 public class Test : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public 
     void Start()
     {
-        var leftHandedControllers = new List<UnityEngine.XR.InputDevice>();
-        var desiredCharacteristics = UnityEngine.XR.InputDeviceCharacteristics.None;
-        UnityEngine.XR.InputDevices.GetDevicesWithCharacteristics(desiredCharacteristics, leftHandedControllers);
 
-        foreach (var device in leftHandedControllers)
-        {
-            Debug.Log(string.Format("Device name '{0}' has characteristics '{1}'", device.name, device.characteristics.ToString()));
-        }
     }
 
+    //public bool TryGetFeatureValue(InputFeatureUsage <Vector2> usage, out Vector2 value);
+    
     // Update is called once per frame
     void Update()
     {
-        
+        //Debug.Log(Button.SecondaryThumbstick);
+
+    }
+    public void Print()
+    {
+        Debug.Log("Hej");
     }
 }
