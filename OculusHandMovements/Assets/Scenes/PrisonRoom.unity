@@ -21744,6 +21744,26 @@ PrefabInstance:
       propertyPath: m_InteractionLayers.m_Bits
       value: 247
       objectReference: {fileID: 0}
+    - target: {fileID: 1708915286625124435, guid: 3893d82a357259a4fb6a26cdfd893996, type: 3}
+      propertyPath: m_PositionAction.m_Reference
+      value: 
+      objectReference: {fileID: -2024308242397127297, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+    - target: {fileID: 1708915286625124435, guid: 3893d82a357259a4fb6a26cdfd893996, type: 3}
+      propertyPath: m_SelectActionValue.m_Action.m_Id
+      value: 8e0c80c6-59e6-4fa3-a6ac-ced7edb673c5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1708915286625124435, guid: 3893d82a357259a4fb6a26cdfd893996, type: 3}
+      propertyPath: m_UIPressActionValue.m_Action.m_Id
+      value: 537241bf-f0b1-4285-8dac-4bc47124c5ad
+      objectReference: {fileID: 0}
+    - target: {fileID: 1708915286625124435, guid: 3893d82a357259a4fb6a26cdfd893996, type: 3}
+      propertyPath: m_ActivateActionValue.m_Action.m_Id
+      value: c3729543-03b9-4bd4-a967-f8b67888b475
+      objectReference: {fileID: 0}
+    - target: {fileID: 1708915286625124435, guid: 3893d82a357259a4fb6a26cdfd893996, type: 3}
+      propertyPath: m_TrackingStateAction.m_Action.m_Id
+      value: b2622536-f318-49a9-bddb-6b338a2348a0
+      objectReference: {fileID: 0}
     - target: {fileID: 1708915286782565979, guid: 3893d82a357259a4fb6a26cdfd893996, type: 3}
       propertyPath: m_Name
       value: Player

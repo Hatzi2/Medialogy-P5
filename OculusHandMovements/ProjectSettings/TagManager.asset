@@ -12,7 +12,11 @@ TagManager:
   - Water
   - UI
   - Levers
+<<<<<<< HEAD
   - 
+=======
+  - walls
+>>>>>>> parent of 8b31e65 (Minimap collision detection)
   - 
   - 
   - 
