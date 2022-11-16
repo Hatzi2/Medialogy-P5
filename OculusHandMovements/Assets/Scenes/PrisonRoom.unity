@@ -7775,7 +7775,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22e0f76f13f0709429b1b89f9aa72051, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  controller: {fileID: 1869514633}
+  LController: {fileID: 0}
+  RController: {fileID: 0}
   vibrationLength: 0
   vibrationStrength: 1
   timeBetweenVibrations: 2
@@ -10327,6 +10328,7 @@ GameObject:
   - component: {fileID: 997988897}
   - component: {fileID: 997988898}
   - component: {fileID: 997988899}
+  - component: {fileID: 997988900}
   m_Layer: 0
   m_Name: Tracker
   m_TagString: Untagged
@@ -10482,8 +10484,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e4f4bd190beca54a97424d460181382, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Vibrater: {fileID: 997988900}
   Tracker: {fileID: 997988889}
-  radius: 2
+  radius1: 2
+  radius2: 1.5
+  radius3: 1
+--- !u!114 &997988900
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 997988889}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22e0f76f13f0709429b1b89f9aa72051, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LController: {fileID: 0}
+  RController: {fileID: 0}
+  vibrationLength: 0
+  vibrationStrength: 0
+  timeBetweenVibrations: 0
 --- !u!1 &1006510294
 GameObject:
   m_ObjectHideFlags: 0
@@ -18426,17 +18448,6 @@ MonoBehaviour:
   Wire2Low: {fileID: 1761967219}
   transparencyLow: 0.1
   changeSpeedLow: 0.3
---- !u!114 &1869514633 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1708915286625124435, guid: 3893d82a357259a4fb6a26cdfd893996, type: 3}
-  m_PrefabInstance: {fileID: 1708915286248010785}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: caff514de9b15ad48ab85dcff5508221, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1877157664
 GameObject:
   m_ObjectHideFlags: 0
