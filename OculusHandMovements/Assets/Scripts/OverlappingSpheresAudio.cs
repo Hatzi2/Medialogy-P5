@@ -6,6 +6,7 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class OverlappingSpheresAudio : MonoBehaviour
 {
+    public colliderAudioPlayer audioPlayer;
     public GameObject Tracker;
     private Vector3 TrackerPos;
     public float radius1 = 2f;
@@ -33,35 +34,24 @@ public class OverlappingSpheresAudio : MonoBehaviour
         {
             if (k < thirdCollision.Length)
             {
-                Debug.Log(thirdCollision[k] +"K");
+                audioPlayer.sendBeeps(true, 3);
                 k++;
-
                 break;
             }
             
             else if(j < secondCollision.Length)
             {
-                Debug.Log(secondCollision[j] + "J");
+                audioPlayer.sendBeeps(true, 2);
                 j++;
                 break;
             }
             else if (i < firstCollision.Length)
             {
-                Debug.Log(firstCollision[i] + "I");
+                audioPlayer.sendBeeps(true, 1);
                 break;
             }
 
         }
 
     }
-
-void OnDrawGizmosSelected ()
- {
-     Gizmos.color = Color.green;
-     Gizmos.DrawWireSphere (transform.position, radius1);
-     Gizmos.color = Color.yellow;
-     Gizmos.DrawWireSphere (transform.position, radius2);
-     Gizmos.color = Color.red;
-     Gizmos.DrawWireSphere (transform.position, radius3);
- }
 }
