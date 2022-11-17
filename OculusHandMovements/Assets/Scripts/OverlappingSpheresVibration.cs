@@ -6,6 +6,7 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class OverlappingSpheresVibration : MonoBehaviour
 {
+    public controllerVibration vibration;
     public GameObject Tracker;
     private Vector3 TrackerPos;
     public float radius1 = 2f;
@@ -34,6 +35,7 @@ public class OverlappingSpheresVibration : MonoBehaviour
             if (k < thirdCollision.Length)
             {
                 Debug.Log(thirdCollision[k] +"K");
+                vibration.SendHaptics(1f, .75f);
                 k++;
 
                 break;
@@ -42,12 +44,14 @@ public class OverlappingSpheresVibration : MonoBehaviour
             else if(j < secondCollision.Length)
             {
                 Debug.Log(secondCollision[j] + "J");
+                vibration.SendHaptics(.5f, .5f);
                 j++;
                 break;
             }
             else if (i < firstCollision.Length)
             {
                 Debug.Log(firstCollision[i] + "I");
+                vibration.SendHaptics(.25f, .25f);
                 break;
             }
 

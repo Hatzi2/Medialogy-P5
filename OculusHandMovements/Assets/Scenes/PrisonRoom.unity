@@ -10296,8 +10296,7 @@ GameObject:
   - component: {fileID: 997988893}
   - component: {fileID: 997988892}
   - component: {fileID: 997988891}
-  - component: {fileID: 997988897}
-  - component: {fileID: 997988898}
+  - component: {fileID: 997988900}
   - component: {fileID: 997988899}
   m_Layer: 0
   m_Name: Tracker
@@ -10396,52 +10395,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 997988889}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &997988897
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 997988889}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bb834279953c0e84baa8b7315fabd28f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &997988898
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 997988889}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Actions: {fileID: -944628639613478452, guid: f6daf40d582da1543a2c7578fe1f71e9, type: 3}
-  m_NotificationBehavior: 2
-  m_UIInputModule: {fileID: 0}
-  m_DeviceLostEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_DeviceRegainedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ControlsChangedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ActionEvents:
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 3057a34e-a5b4-4c3c-8f2b-14c7c7157e33
-    m_ActionName: Player/RightStick
-  m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: 
-  m_DefaultActionMap: Player
-  m_SplitScreenIndex: -1
-  m_Camera: {fileID: 0}
 --- !u!114 &997988899
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10454,16 +10407,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e4f4bd190beca54a97424d460181382, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  vibration: {fileID: 997988900}
   Tracker: {fileID: 997988889}
-  LController: {fileID: 1633374122}
-  RController: {fileID: 2095556630}
-  vibrationLength: 0
-  vibrationStrength: 0
-  timeBetweenVibrations: 0
   radius1: 2
   radius2: 1.5
   radius3: 1
-  radius4: 2.1
+--- !u!114 &997988900
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 997988889}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22e0f76f13f0709429b1b89f9aa72051, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LController: {fileID: 1633374122}
+  RController: {fileID: 2095556630}
+  timeBetweenVibrations: 1
 --- !u!1 &1006510294
 GameObject:
   m_ObjectHideFlags: 0

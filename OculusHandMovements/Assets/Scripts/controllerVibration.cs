@@ -6,8 +6,6 @@ public class controllerVibration : MonoBehaviour
 {
     public XRBaseController LController;
     public XRBaseController RController;
-    public float vibrationLength;
-    public float vibrationStrength;
     public float timeBetweenVibrations;
  
     protected void Start()
@@ -15,18 +13,18 @@ public class controllerVibration : MonoBehaviour
         StartCoroutine(StartPeriodicHaptics());
     }
  
-    IEnumerator StartPeriodicHaptics()
+    public IEnumerator StartPeriodicHaptics()
     {
         var delay = new WaitForSeconds(timeBetweenVibrations);
  
         while (true)
         {
             yield return delay;
-            SendHaptics();
+            SendHaptics(0, 0);
         }
     }
  
-    void SendHaptics()
+    public void SendHaptics(float vibrationStrength, float vibrationLength)
     {
         
         RController.SendHapticImpulse(vibrationStrength, vibrationLength);
