@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 
 
-public class OverlappingSpheres: MonoBehaviour
+public class OverlappingSpheresVibration : MonoBehaviour
 {
     public GameObject Tracker;
     private Vector3 TrackerPos;
