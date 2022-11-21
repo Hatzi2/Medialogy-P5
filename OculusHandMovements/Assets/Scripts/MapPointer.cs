@@ -34,9 +34,9 @@ public class MapPointer : MonoBehaviour
     
 
     //UnityEngine.XR.InputDevices.GetDevicesAtXRNode(UnityEngine.XR.XRNode.Head, HeadOrientation);
-    wayPointPos = new Vector3(wayPoint.transform.position.x, transform.position.y, wayPoint.transform.position.z);
+    wayPointPos = new Vector3(headPosition[0], -10, headPosition[2]);
     transform.position = Vector3.MoveTowards(transform.position, wayPointPos, speed * Time.deltaTime);
-    //HeadOrientation = HeadOrientation[0].transform.localRotation.y;
+    //HeadOrientation = HeadOrientation[0].transform.localRotation.y; 
     //test = new Vector3(UnityEngine.XR.XRNode.Head.x, UnityEngine.XR.XRNode.Head.y, UnityEngine.XR.XRNode.Head.z);
 
     //test = new Vector3(wayPoint.transform.position.x, transform.position.y, wayPoint.transform.position.z);
@@ -44,8 +44,8 @@ public class MapPointer : MonoBehaviour
     //transform.rotation = Quaternion.RotateTowards(transform.rotation, MainCamera.transform.rotation.y, speed*Time.deltaTime);
 
     transform.rotation = Quaternion.Euler(0,headRotation[1]*180,0);
-    headPositionPos = new Vector3(headPosition.x,0,headPosition.z);
-    transform.position = Vector3.MoveTowards(headPositionPos, headPositionPos, speed * Time.deltaTime);
+    //headPositionPos = new Vector3(headPosition.x,0,headPosition.z);
+    //transform.position = Vector3.MoveTowards(headPositionPos, headPositionPos, speed * Time.deltaTime);
  }
 
 }
