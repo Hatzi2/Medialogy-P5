@@ -7,20 +7,12 @@ public class colliderAudioPlayer : MonoBehaviour
     public AudioSource beep;
     void Start()
     {
-
+        beep.loop = true;
+        beep.Play();
     }
 
-    public void sendBeeps(bool playing, float pitch)
+    public void sendBeeps(float volume)
     {
-        if (playing)
-        {
-            beep.Play();
-            beep.loop = true;
-            beep.pitch = pitch;
-        }
-        else
-        {
-            beep.Stop();
-        }
+            beep.volume = volume;
     }
 }

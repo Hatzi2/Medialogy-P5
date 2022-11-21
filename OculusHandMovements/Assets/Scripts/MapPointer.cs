@@ -10,6 +10,7 @@ public class MapPointer : MonoBehaviour
      private Vector3 wayPointPos;
     private Vector3 headPosition;
     private Quaternion headRotation;
+    private Vector3 headPositionPos;
     private List<XRNodeState> nodeStates = new List<XRNodeState>();
      //public GameObject MainCamera;
      //List<InputDevice> HeadOrientation = new List<InputDevice>(); 
@@ -43,6 +44,8 @@ public class MapPointer : MonoBehaviour
     //transform.rotation = Quaternion.RotateTowards(transform.rotation, MainCamera.transform.rotation.y, speed*Time.deltaTime);
 
     transform.rotation = Quaternion.Euler(0,headRotation[1]*180,0);
+    headPositionPos = new Vector3(headPosition.x,0,headPosition.z);
+    transform.position = Vector3.MoveTowards(headPositionPos, headPositionPos, speed * Time.deltaTime);
  }
 
 }

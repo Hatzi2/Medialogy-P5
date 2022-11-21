@@ -15,12 +15,6 @@ public class OverlappingSpheresAudio : MonoBehaviour
     private int k = 0;
     private int j = 0;
 
-    void Start()
-    {
-
-    }
-
-
     void Update()
     {
         j = 0;
@@ -29,29 +23,39 @@ public class OverlappingSpheresAudio : MonoBehaviour
         Collider[] firstCollision = Physics.OverlapSphere(TrackerPos, radius1);
         Collider[] secondCollision = Physics.OverlapSphere(TrackerPos, radius2);
         Collider[] thirdCollision = Physics.OverlapSphere(TrackerPos, radius3);
-
+        audioPlayer.sendBeeps(0f);
         for (int i = 0; i < firstCollision.Length; i++)
         {
             if (k < thirdCollision.Length)
             {
-                audioPlayer.sendBeeps(true, 3);
+                audioPlayer.sendBeeps(1f);
                 k++;
                 break;
             }
             
             else if(j < secondCollision.Length)
             {
-                audioPlayer.sendBeeps(true, 2);
+                audioPlayer.sendBeeps(0.5f);
                 j++;
                 break;
             }
             else if (i < firstCollision.Length)
             {
-                audioPlayer.sendBeeps(true, 1);
+                audioPlayer.sendBeeps(.25f);
                 break;
             }
 
         }
 
     }
+
+    void OnDrawGizmosSelected ()
+ {
+     Gizmos.color = Color.green;
+     Gizmos.DrawWireSphere (transform.position, radius1);
+     Gizmos.color = Color.yellow;
+     Gizmos.DrawWireSphere (transform.position, radius2);
+     Gizmos.color = Color.red;
+     Gizmos.DrawWireSphere (transform.position, radius3);
+ }
 }
