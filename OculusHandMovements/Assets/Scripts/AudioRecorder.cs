@@ -2,15 +2,19 @@ using UnityEngine;
 
 public class AudioRecorder : MonoBehaviour
 {
-    // Start recording with built-in Microphone and play the recorded audio right away
+    public GameObject endState;
+    public bool saveState = false;
+    AudioClip myAudioClip; 
     void Start()
     {
-        foreach (var device in Microphone.devices)
+        myAudioClip = Microphone.Start("Headset Microphone (Oculus Virtual Audio Device)", true, 100, 44100);
+    }
+
+    void Update(){
+        if (saveState)
         {
-            Debug.Log("Name: " + device);
+            Microphone.End("Headset Microphone (Oculus Virtual Audio Device)");
+            SavWav.Save("myfile", myAudioClip);
         }
-        AudioSource audioSource = GetComponent<AudioSource>();
-        audioSource.clip = Microphone.Start("Headset Microphone (Oculus Virtual Audio Device)", true, 10, 44100);
-        audioSource.Play();
     }
 }

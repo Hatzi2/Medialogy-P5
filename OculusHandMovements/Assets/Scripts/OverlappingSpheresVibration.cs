@@ -34,7 +34,7 @@ public class OverlappingSpheresVibration : MonoBehaviour
         {
             if (k < thirdCollision.Length)
             {
-                Debug.Log(thirdCollision[k] +"K");
+                Debug.Log(thirdCollision[k] +"High");
                 vibration.SendHaptics(1f, .75f);
                 k++;
 
@@ -43,14 +43,14 @@ public class OverlappingSpheresVibration : MonoBehaviour
             
             else if(j < secondCollision.Length)
             {
-                Debug.Log(secondCollision[j] + "J");
+                Debug.Log(secondCollision[j] + "Mid");
                 vibration.SendHaptics(.5f, .5f);
                 j++;
                 break;
             }
             else if (i < firstCollision.Length)
             {
-                Debug.Log(firstCollision[i] + "I");
+                Debug.Log(firstCollision[i] + "Low");
                 vibration.SendHaptics(.25f, .25f);
                 break;
             }

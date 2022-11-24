@@ -20,10 +20,12 @@ public class OverlappingSpheresTunnelvision: MonoBehaviour
     //trans is the transparency factor for the vignette.
     public float trans = 0f;
     public Image vignette;
+    public GameObject imageObject;
 
     void Start()
     {
         //vignette = this.GetComponent<Tunnel>();
+        imageObject.SetActive(true);
     }
 
 

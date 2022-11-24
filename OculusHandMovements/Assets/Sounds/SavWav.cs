@@ -1,48 +1,61 @@
+//	Copyright (c) 2012 Calvin Rien
+//        http://the.darktable.com
+//
+//	This software is provided 'as-is', without any express or implied warranty. In
+//	no event will the authors be held liable for any damages arising from the use
+//	of this software.
+//
+//	Permission is granted to anyone to use this software for any purpose,
+//	including commercial applications, and to alter it and redistribute it freely,
+//	subject to the following restrictions:
+//
+//	1. The origin of this software must not be misrepresented; you must not claim
+//	that you wrote the original software. If you use this software in a product,
+//	an acknowledgment in the product documentation would be appreciated but is not
+//	required.
+//
+//	2. Altered source versions must be plainly marked as such, and must not be
+//	misrepresented as being the original software.
+//
+//	3. This notice may not be removed or altered from any source distribution.
+//
+//  =============================================================================
+//
+//  derived from Gregorio Zanon's script
+//  http://forum.unity3d.com/threads/119295-Writing-AudioListener.GetOutputData-to-wav-problem?p=806734&viewfull=1#post806734
+
 using System;
 using System.IO;
 using UnityEngine;
 using System.Collections.Generic;
-using System.Threading;
 
-public class SaveAudio: MonoBehaviour {
+public static class SavWav {
 
 	const int HEADER_SIZE = 44;
-	struct ClipData{
 
-		public  int samples;
-		public  int channels;
-		public float[] samplesData;
-
-	}
-
-	public bool Save(string filename, AudioClip clip) {
+	public static bool Save(string filename, AudioClip clip) {
 		if (!filename.ToLower().EndsWith(".wav")) {
 			filename += ".wav";
 		}
 
-		var filepath = filename;
+		var filepath = Path.Combine(Application.persistentDataPath, filename);
 
 		Debug.Log(filepath);
 
 		// Make sure directory exists if user is saving to sub dir.
 		Directory.CreateDirectory(Path.GetDirectoryName(filepath));
-		ClipData clipdata = new ClipData ();
-		clipdata.samples = clip.samples;
-		clipdata.channels = clip.channels;
-		float[] dataFloat = new float[clip.samples*clip.channels];
-		clip.GetData (dataFloat, 0);
-		clipdata.samplesData = dataFloat;
+
 		using (var fileStream = CreateEmpty(filepath)) {
-			MemoryStream memstrm = new MemoryStream ();
-			ConvertAndWrite(memstrm, clipdata);
-			memstrm.WriteTo (fileStream);
+
+			ConvertAndWrite(fileStream, clip);
+
 			WriteHeader(fileStream, clip);
 		}
 
 		return true; // TODO: return false if there's a failure saving the file
 	}
 
-	public AudioClip TrimSilence(AudioClip clip, float min) {
+	public static AudioClip TrimSilence(AudioClip clip, float min) {
 		var samples = new float[clip.samples];
 
 		clip.GetData(samples, 0);
@@ -50,11 +63,11 @@ public class SaveAudio: MonoBehaviour {
 		return TrimSilence(new List<float>(samples), min, clip.channels, clip.frequency);
 	}
 
-	public AudioClip TrimSilence(List<float> samples, float min, int channels, int hz) {
+	public static AudioClip TrimSilence(List<float> samples, float min, int channels, int hz) {
 		return TrimSilence(samples, min, channels, hz, false, false);
 	}
 
-	public AudioClip TrimSilence(List<float> samples, float min, int channels, int hz, bool _3D, bool stream) {
+	public static AudioClip TrimSilence(List<float> samples, float min, int channels, int hz, bool _3D, bool stream) {
 		int i;
 
 		for (i=0; i<samples.Count; i++) {
@@ -73,14 +86,14 @@ public class SaveAudio: MonoBehaviour {
 
 		samples.RemoveRange(i, samples.Count - i);
 
-		var clip = AudioClip.Create("TempClip", samples.Count, channels, hz, _3D, stream);
+		var clip = AudioClip.Create("TempClip", samples.Count, channels, hz, stream);
 
 		clip.SetData(samples.ToArray(), 0);
 
 		return clip;
 	}
 
-	 FileStream CreateEmpty(string filepath) {
+	static FileStream CreateEmpty(string filepath) {
 		var fileStream = new FileStream(filepath, FileMode.Create);
 	    byte emptyByte = new byte();
 
@@ -92,28 +105,32 @@ public class SaveAudio: MonoBehaviour {
 		return fileStream;
 	}
 
-	void ConvertAndWrite(MemoryStream memStream, ClipData clipData)
-	{
-		float[] samples = new float[clipData.samples*clipData.channels];
+	static void ConvertAndWrite(FileStream fileStream, AudioClip clip) {
 
-		samples = clipData.samplesData;
+		var samples = new float[clip.samples];
+
+		clip.GetData(samples, 0);
 
 		Int16[] intData = new Int16[samples.Length];
+		//converting in 2 float[] steps to Int16[], //then Int16[] to Byte[]
 
 		Byte[] bytesData = new Byte[samples.Length * 2];
+		//bytesData array is twice the size of
+		//dataSource array because a float converted in Int16 is 2 bytes.
 
-		const float rescaleFactor = 32767; //to convert float to Int16
+		int rescaleFactor = 32767; //to convert float to Int16
 
-		for (int i = 0; i < samples.Length; i++)
-		{
-			intData[i] = (short)(samples[i] * rescaleFactor);
-			//Debug.Log (samples [i]);
+		for (int i = 0; i<samples.Length; i++) {
+			intData[i] = (short) (samples[i] * rescaleFactor);
+			Byte[] byteArr = new Byte[2];
+			byteArr = BitConverter.GetBytes(intData[i]);
+			byteArr.CopyTo(bytesData, i * 2);
 		}
-		Buffer.BlockCopy(intData, 0, bytesData, 0, bytesData.Length);
-		memStream.Write(bytesData, 0, bytesData.Length);
+
+		fileStream.Write(bytesData, 0, bytesData.Length);
 	}
 
-	 void WriteHeader(FileStream fileStream, AudioClip clip) {
+	static void WriteHeader(FileStream fileStream, AudioClip clip) {
 
 		var hz = clip.frequency;
 		var channels = clip.channels;
@@ -136,7 +153,7 @@ public class SaveAudio: MonoBehaviour {
 		Byte[] subChunk1 = BitConverter.GetBytes(16);
 		fileStream.Write(subChunk1, 0, 4);
 
-		UInt16 two = 2;
+		//UInt16 two = 2;
 		UInt16 one = 1;
 
 		Byte[] audioFormat = BitConverter.GetBytes(one);
