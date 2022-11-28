@@ -35,7 +35,7 @@ public class CSVWriter : MonoBehaviour
     {
 
 
-        filename = Application.dataPath + "/test2.csv";
+        filename = Application.dataPath + "/CSVFiles/test2.csv";
 
         //WriteCSV();
         //watcher.primaryButtonPress.AddListener(onPrimaryButtonEvent);
@@ -81,8 +81,9 @@ public class CSVWriter : MonoBehaviour
         {
             for(int i = 0; i < myUserList.user.Length; i++)
             {
-                
-                tw.WriteLine(myUserList.user[i].name + "," + headPosition[0] + "," + headPosition[2] + "," + timeNow + "," + myUserList.user[i].guardianTime); //Add to this list if we want to add more predetermined things
+                headPosition[0] = Mathf.Round(headPosition[0]*10.0f)*0.01f;
+                headPosition[2] = Mathf.Round(headPosition[2]*10.0f)*0.01f;
+                tw.WriteLine(myUserList.user[i].name + ";" + headPosition[0] + ";" + headPosition[2] + ";" + timeNow + ";" + myUserList.user[i].guardianTime); //Add to this list if we want to add more predetermined things
             }
             
             timeReset = 0;
