@@ -22849,8 +22849,9 @@ MonoBehaviour:
   myUserList:
     user:
     - name: TestPerson1
-    - name: TestPerson2
-    - name: TestPerson3
+      position: 0
+      runTime: 0
+      guardianTime: 0
 --- !u!4 &2005502395
 Transform:
   m_ObjectHideFlags: 0

@@ -10,6 +10,7 @@ public class CSVWriter : MonoBehaviour
 {
     string filename = "";
     
+    
     //public PrimaryButtonWatcher watcher;
     //public bool IsPressed = false;
 
@@ -33,9 +34,11 @@ public class CSVWriter : MonoBehaviour
 
     void Start()
     {
-
-
-        filename = Application.dataPath + "/CSVFiles/test2.csv";
+        var curTime = "";
+        curTime = System.DateTime.Now.ToString("dd-MM-yyyy_hh-mm-ss");
+        
+        //filename = Application.dataPath + "/CSVFiles/test2.csv";
+        filename = Application.dataPath + "/CSVFiles/" + curTime +".csv";
 
         //WriteCSV();
         //watcher.primaryButtonPress.AddListener(onPrimaryButtonEvent);
@@ -69,7 +72,7 @@ public class CSVWriter : MonoBehaviour
         {
             if (headerLine == true)
             {
-                tw.WriteLine("Name, PositionX, PositionY, RunTime, GuardianTime"); //Add to this list if we want to add more predetermined things
+                tw.WriteLine("Name, PositionX, PositionY, RunTime"); //Add to this list if we want to add more predetermined things
                 tw.Close();
                 tw = new StreamWriter(filename, true);
                 headerLine = false;
@@ -77,13 +80,13 @@ public class CSVWriter : MonoBehaviour
             
 
             
-        if (timeReset > 2.0f)
+        if (timeReset > 0.5f)
         {
             for(int i = 0; i < myUserList.user.Length; i++)
             {
                 headPosition[0] = Mathf.Round(headPosition[0]*10.0f)*0.01f;
                 headPosition[2] = Mathf.Round(headPosition[2]*10.0f)*0.01f;
-                tw.WriteLine(myUserList.user[i].name + ";" + headPosition[0] + ";" + headPosition[2] + ";" + timeNow + ";" + myUserList.user[i].guardianTime); //Add to this list if we want to add more predetermined things
+                tw.WriteLine(myUserList.user[i].name + ";" + headPosition[0] + ";" + headPosition[2] + ";" + timeNow); //Add to this list if we want to add more predetermined things
             }
             
             timeReset = 0;
