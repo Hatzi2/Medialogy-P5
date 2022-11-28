@@ -5,7 +5,7 @@ using UnityEngine.XR.Interaction.Toolkit;
 public class controllerVibration : MonoBehaviour
 {
     public XRBaseController LController;
-    public XRBaseController RController;
+    //public XRBaseController RController;
     private float timeBetweenVibrations = 1f;
  
     protected void Start()
@@ -27,7 +27,7 @@ public class controllerVibration : MonoBehaviour
     public void SendHaptics(float vibrationStrength, float vibrationLength)
     {
         
-        RController.SendHapticImpulse(vibrationStrength, vibrationLength);
+        //RController.SendHapticImpulse(vibrationStrength, vibrationLength);
         LController.SendHapticImpulse(vibrationStrength, vibrationLength);
     }
 }
