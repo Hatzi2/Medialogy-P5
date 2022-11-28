@@ -25,7 +25,10 @@ public class OverlappingSpheresTunnelvision: MonoBehaviour
     void Start()
     {
         //vignette = this.GetComponent<Tunnel>();
-        imageObject.SetActive(true);
+        if (this.gameObject.activeSelf)
+        {
+            imageObject.SetActive(true);
+        }
     }
 
 
