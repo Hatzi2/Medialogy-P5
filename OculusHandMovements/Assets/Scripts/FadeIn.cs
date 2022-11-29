@@ -23,7 +23,7 @@ IEnumerator Fadein() {
     targetAlpha = 1.0f;
     Color curColor = image.color;
     while(Mathf.Abs(curColor.a - targetAlpha) > 0.0001f) {
-        Debug.Log(image.material.color.a);
+        //Debug.Log(image.material.color.a);
         curColor.a = Mathf.Lerp(curColor.a, targetAlpha, FadeRate * Time.deltaTime);
         image.color = curColor;
         yield return null;

@@ -66,7 +66,10 @@ public class CSVWriter : MonoBehaviour
     
         headState.TryGetPosition(out headPosition);
 
-        
+        if (timeNow > 900)
+        {
+            Debug.Log("15 minutes has passed");
+        }
         TextWriter tw = new StreamWriter(filename, true);
         if(myUserList.user.Length > 0)
         {
@@ -92,7 +95,7 @@ public class CSVWriter : MonoBehaviour
             timeReset = 0;
         }
         tw.Close();
-        Debug.Log(timeNow);
+        
         
 
             
