@@ -13,6 +13,7 @@ public class Forcefield : MonoBehaviour
 
     public AudioSource ForceFieldSound;
     public AudioSource ForceFieldTerminateSound;
+    public AudioSource fuseBox;
 
     
     void Start()
@@ -31,6 +32,7 @@ public class Forcefield : MonoBehaviour
             lightController.turnOn(false);
             ForceFieldSound.Stop();
             ForceFieldTerminateSound.Play();
+            fuseBox.Play();
             Destroy(gameObject);
         }
     }

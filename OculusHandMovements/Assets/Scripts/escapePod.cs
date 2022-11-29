@@ -23,8 +23,8 @@ public class escapePod : MonoBehaviour
  }
             if(allPulled())
             {
-                this.transform.position = new Vector3(0,0,2);
-                Debug.Log("Open");
+                this.transform.position = new Vector3(0,100,0);
+
             }
     }
 }

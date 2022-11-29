@@ -27,7 +27,7 @@ public class keypadScreen : MonoBehaviour
                 {
                     keyColliders[i].enabled = false;
                 }
-                door.transform.position = new Vector3(0,2,0);
+                door.transform.position = new Vector3(0,100,0);
 
             }
             else
