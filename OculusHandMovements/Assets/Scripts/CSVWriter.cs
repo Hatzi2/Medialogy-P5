@@ -9,6 +9,7 @@ using System.IO;
 public class CSVWriter : MonoBehaviour
 {
     string filename = "";
+    bool timer = false;
     
     
     //public PrimaryButtonWatcher watcher;
@@ -66,9 +67,10 @@ public class CSVWriter : MonoBehaviour
     
         headState.TryGetPosition(out headPosition);
 
-        if (timeNow > 900)
+        if (timeNow > 900 && timer == false)
         {
             Debug.Log("15 minutes has passed");
+            timer = true;
         }
         TextWriter tw = new StreamWriter(filename, true);
         if(myUserList.user.Length > 0)
