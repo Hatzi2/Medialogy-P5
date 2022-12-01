@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 
-
 public class OverlappingSpheresVibration : MonoBehaviour
 {
     public controllerVibration vibration;
@@ -14,12 +13,6 @@ public class OverlappingSpheresVibration : MonoBehaviour
     public float radius3 = 1f;
     private int k = 0;
     private int j = 0;
-
-    void Start()
-    {
-
-    }
-
 
     void Update()
     {
@@ -36,7 +29,6 @@ public class OverlappingSpheresVibration : MonoBehaviour
             {
                 vibration.SendHaptics(1f, .75f);
                 k++;
-
                 break;
             }
             
@@ -56,7 +48,7 @@ public class OverlappingSpheresVibration : MonoBehaviour
 
     }
 
-void OnDrawGizmosSelected ()
+/*void OnDrawGizmosSelected ()
  {
      Gizmos.color = Color.green;
      Gizmos.DrawWireSphere (transform.position, radius1);
@@ -64,5 +56,5 @@ void OnDrawGizmosSelected ()
      Gizmos.DrawWireSphere (transform.position, radius2);
      Gizmos.color = Color.red;
      Gizmos.DrawWireSphere (transform.position, radius3);
- }
+ }*/
 }
