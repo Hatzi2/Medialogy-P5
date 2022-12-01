@@ -21753,7 +21753,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1731481804
 Transform:
   m_ObjectHideFlags: 0
@@ -24973,7 +24973,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myUserList:
     user:
-    - name: TestPerson1
+    - name: TestPerson2
       position: 0
       runTime: 0
       guardianTime: 0
@@ -29945,7 +29945,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5390547556592434605, guid: 3d7f411e6000f414b9ea62223acceff8, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7437361662000415521, guid: 3d7f411e6000f414b9ea62223acceff8, type: 3}
       propertyPath: m_Name

@@ -13,7 +13,7 @@ public class AudioRecorder : MonoBehaviour
 
     void Update(){
         var curTime = "";
-        if (endState.activeSelf && saved == false|| ManualSave)
+        if (endState.activeSelf && saved == false|| ManualSave && saved == false)
         {
             curTime = System.DateTime.Now.ToString("dd-MM-yyyy_hh-mm-ss");
             Microphone.End("Headset Microphone (Oculus Virtual Audio Device)");
