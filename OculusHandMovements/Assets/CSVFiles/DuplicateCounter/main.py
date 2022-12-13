@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 from numpy import savetxt
 
-df = pd.read_csv('TotalTests.csv', delimiter=";", decimal=",") #Read the data from csv file
+df = pd.read_csv('GuardianTestsAdjusted.csv', delimiter=";", decimal=",") #Read the data from csv file
 
 PosX = df['PosX;'].to_numpy() #Isolate PosX and PosY
 PosY = df['PosY;'].to_numpy()
@@ -11,5 +11,5 @@ unique_rows, counts = np.unique(Positions, axis=0, return_counts=True) #Count al
 countsV = np.vstack((counts)) #Make a new column with all counts next to their appropiate PosX and PosY values
 
 SaveFile = np.concatenate((unique_rows,countsV), axis=1) #Set up a new array with PosX, PosY and Count
-savetxt('TotalResults.csv', SaveFile, delimiter=";", fmt='%1.3f') #Save float to a CSV file
+savetxt('GuardianResultsAdjusted.csv', SaveFile, delimiter=";", fmt='%1.3f') #Save float to a CSV file
 print(SaveFile)
